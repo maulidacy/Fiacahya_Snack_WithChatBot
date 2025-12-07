@@ -1,6 +1,6 @@
-// src/app/produk/page.tsx
 "use client";
 
+import Link from "next/link"; // ⬅️ TAMBAH INI
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { Playfair_Display, Montserrat } from "next/font/google";
@@ -27,28 +27,40 @@ const stagger = {
 
 const categories = [
   {
+    slug: "kue-basah",
     title: "Kue Basah",
     desc: "Produk utama untuk konsumsi harian dan pesanan acara, dengan fokus pada tekstur lembut dan rasa autentik.",
     examples: ["Klepon pandan", "Dadar gulung cokelat", "Nagasi pisang", "Lemper ayam"],
     note: "Cocok untuk snack box harian, arisan, dan acara keluarga.",
+    waMessage:
+      "Halo Fiacahya Snack, saya ingin tanya detail paket dan ketersediaan untuk kategori *Kue Basah*.",
   },
   {
+    slug: "kue-kering",
     title: "Kue Kering",
     desc: "Produksi musiman dan reguler untuk paket hampers, parcel, dan penjualan grosir.",
     examples: ["Kastengel", "Nastar", "Putri salju", "Sagu keju"],
     note: "Ideal untuk paket lebaran, hampers perusahaan, dan gift premium.",
+    waMessage:
+      "Halo Fiacahya Snack, saya ingin tanya detail paket dan ketersediaan untuk kategori *Kue Kering*.",
   },
   {
+    slug: "kue-tart-cake",
     title: "Kue Tart & Cake",
     desc: "Cake dekoratif untuk ulang tahun, syukuran, dan kebutuhan display di coffee shop.",
     examples: ["Tart fresh cream", "Butter cake", "Brownies panggang"],
     note: "Bisa custom ukuran, dekor minimalis, dan message khusus.",
+    waMessage:
+      "Halo Fiacahya Snack, saya ingin tanya detail paket dan ketersediaan untuk kategori *Kue Tart & Cake*.",
   },
   {
+    slug: "snack-box-paket",
     title: "Snack Box & Paket",
     desc: "Paket isi beberapa item kue untuk rapat kantor, pengajian, dan acara keluarga.",
     examples: ["Snack box isi 3–5 item", "Paket arisan", "Paket rapat pagi"],
     note: "Layout box rapi, label jelas, dan dokumentasi batch tersedia.",
+    waMessage:
+      "Halo Fiacahya Snack, saya ingin tanya detail paket dan ketersediaan untuk kategori *Snack Box & Paket*.",
   },
 ];
 
@@ -96,7 +108,7 @@ export default function ProdukPage() {
           >
             {categories.map((cat) => (
               <motion.article
-                key={cat.title}
+                key={cat.slug}
                 variants={fadeUp}
                 className="group rounded-3xl border border-[#E3C9A8] bg-white/90 
                   px-5 py-5 md:px-6 md:py-6 shadow-soft 
@@ -138,23 +150,30 @@ export default function ProdukPage() {
                 </div>
 
                 <div className="mt-4 flex flex-wrap gap-3">
-                  <button
-                    type="button"
+                  {/* LIHAT DETAIL → KE HALAMAN /produk/[slug] */}
+                  <Link
+                    href={`/produk/${cat.slug}`}
                     className="inline-flex items-center justify-center rounded-full px-4 py-2 text-xs font-semibold 
                       bg-gradient-to-r from-[#C48A4A] to-[#F4C58A] text-white shadow-lg shadow-[#C48A4A]/30
                       hover:shadow-soft-lg hover:-translate-y-0.5 active:translate-y-0 transition-all
                       dark:shadow-black/40"
                   >
                     Lihat Detail Paket
-                  </button>
-                  <button
-                    type="button"
+                  </Link>
+
+                  {/* TANYA KETERSEDIAAN → WA DENGAN PESAN SESUAI KATEGORI */}
+                  <a
+                    href={`https://wa.me/6281234567890?text=${encodeURIComponent(
+                      cat.waMessage,
+                    )}`}
+                    target="_blank"
+                    rel="noreferrer"
                     className="inline-flex items-center justify-center rounded-full px-4 py-2 text-xs font-semibold 
                       border border-[#E3C9A8] bg-white/80 text-[#6A4A35] shadow-sm
                       hover:bg-white dark:border-neutral-700 dark:bg-transparent dark:text-neutral-100 dark:hover:bg-[#181818]"
                   >
                     Tanya Ketersediaan
-                  </button>
+                  </a>
                 </div>
               </motion.article>
             ))}

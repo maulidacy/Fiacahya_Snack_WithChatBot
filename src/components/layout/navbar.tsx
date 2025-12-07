@@ -1,4 +1,3 @@
-// src/components/layout/navbar.tsx
 "use client";
 
 import Link from "next/link";
@@ -62,25 +61,26 @@ export function Navbar() {
                     href={item.href}
                     className="group relative inline-flex items-center px-3 py-1.5 text-xs font-medium"
                   >
-                    {/* background pill */}
+                    {/* background pill GOLD */}
                     <span
-                      className={`absolute inset-0 rounded-full transition-all duration-200 ease-out scale-0 opacity-0 group-hover:scale-100 group-hover:opacity-100 ${
-                        active
-                          ? "scale-100 opacity-100 bg-neutral-100 shadow-sm dark:bg-[#111318]"
-                          : "bg-white shadow-sm dark:bg-[#111318]/70"
-                      }`}
+                      className={`absolute inset-0 rounded-full bg-gradient-to-r from-brand-caramel to-brand-gold shadow-sm dark:from-brand-caramel dark:to-brand-gold transition-all duration-200 ease-out
+                        ${
+                          active
+                            ? "scale-100 opacity-100"
+                            : "scale-0 opacity-0 group-hover:scale-100 group-hover:opacity-100"
+                        }`}
                     />
                     {/* text */}
                     <span
                       className={`relative z-10 transition-colors ${
                         active
-                          ? "text-text-light dark:text-amber-100"
-                          : "text-[#6A4A35] group-hover:text-text-light dark:text-neutral-200 dark:group-hover:text-amber-100"
+                          ? "text-white dark:text-amber-50"
+                          : "text-[#6A4A35] group-hover:text-white dark:text-neutral-200 dark:group-hover:text-amber-50"
                       }`}
                     >
                       {item.label}
                     </span>
-                    {/* underline */}
+                    {/* underline GOLD */}
                     <span
                       className={`pointer-events-none absolute left-3 right-3 -bottom-1 h-[2px] origin-center rounded-full bg-gradient-to-r from-brand-caramel to-brand-gold transition-transform duration-200 ${
                         active ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
@@ -145,8 +145,8 @@ export function Navbar() {
                       onClick={() => setOpen(false)}
                       className={`block rounded-full px-3 py-2 transition ${
                         active
-                          ? "bg-neutral-100 text-text-light shadow-sm dark:bg-[#111318] dark:text-amber-100"
-                          : "text-[#6A4A35] hover:bg-neutral-100 dark:text-neutral-200 dark:hover:bg-[#111318]"
+                          ? "bg-gradient-to-r from-brand-caramel to-brand-gold text-white shadow-sm dark:text-amber-50"
+                          : "text-[#6A4A35] hover:bg-gradient-to-r hover:from-brand-caramel hover:to-brand-gold hover:text-white dark:text-neutral-200 dark:hover:text-amber-50"
                       }`}
                     >
                       {item.label}

@@ -36,16 +36,19 @@ export function Footer() {
         dark:from-neutral-900 dark:to-neutral-950 dark:border-neutral-800
       "
     >
-      {/* highlight radial biar 'bersinar' seperti testimonial */}
+      {/* glow */}
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.14),_transparent)]" />
 
-      {/* isi footer */}
       <div className="relative z-10">
-        {/* TOP AREA */}
-        {/* Tata letak 2 kolom: Kiri (Brand & Deskripsi) | Kanan (Kontak) */}
-        <div className="max-w-6xl mx-auto px-4 py-8 md:py-10 grid gap-8 md:grid-cols-[1.5fr,1fr]">
-          
-          {/* KOLOM KIRI: Brand + tagline */}
+        {/* TOP AREA: Brand kiri | Kontak kanan */}
+        <div
+          className="
+            max-w-6xl mx-auto px-4 py-8 md:py-10
+            grid gap-8 items-start
+            md:grid-cols-2
+          "
+        >
+          {/* BRAND + TAGLINE (KIRI) */}
           <div className="space-y-4">
             <div className="flex items-center gap-3">
               <div className="h-10 w-10 rounded-2xl bg-gradient-to-tr from-[#C48A4A] to-[#F4C58A] flex items-center justify-center text-xs font-semibold text-white shadow-[0_14px_40px_rgba(0,0,0,0.55)]">
@@ -62,26 +65,28 @@ export function Footer() {
             </div>
 
             <p className="text-xs md:text-sm text-[#F9D8AC] max-w-md">
-              Premium bakery & snack production untuk kebutuhan harian, coffee
-              shop, hingga acara korporasi. Fokus pada rasa konsisten, tampilan
-              rapi, dan jadwal pengiriman yang jelas.
+              Premium bakery & snack production untuk kebutuhan harian,
+              coffee shop, hingga acara korporasi. Fokus pada rasa konsisten,
+              tampilan rapi, dan jadwal pengiriman yang jelas.
             </p>
 
             <div className="flex flex-wrap gap-2 text-[11px]">
-              {["Snack box harian", "Coffee shop & kafe", "Corporate & event"].map(
-                (chip) => (
-                  <span
-                    key={chip}
-                    className="inline-flex items-center rounded-full border border-[#F7D3A5]/60 bg-white/5 px-3 py-1 shadow-[0_10px_30px_rgba(0,0,0,0.45)]"
-                  >
-                    {chip}
-                  </span>
-                )
-              )}
+              {[
+                "Snack box harian",
+                "Coffee shop & kafe",
+                "Corporate & event",
+              ].map((chip) => (
+                <span
+                  key={chip}
+                  className="inline-flex items-center rounded-full border border-[#F7D3A5]/60 bg-white/5 px-3 py-1 shadow-[0_10px_30px_rgba(0,0,0,0.45)]"
+                >
+                  {chip}
+                </span>
+              ))}
             </div>
           </div>
 
-          {/* KOLOM KANAN: Kontak */}
+          {/* KOLOM KANAN: Kontak (tetap di kanan, tapi isi rata kiri) */}
           <div className="space-y-3 text-sm">
             <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#F7D3A5]">
               Kontak
@@ -93,20 +98,20 @@ export function Footer() {
                 <div>
                   <p className="font-semibold text-[#FFE6C7]">WhatsApp</p>
                   <p className="text-[#F9D8AC]">
-                    0812-3456-7890 (Admin Fiacahya Snack)
+                    0882-0085-26405 (Admin Fiacahya Snack)
                   </p>
                 </div>
               </li>
+
               {/* Email */}
               <li className="flex items-start gap-3">
                 <Mail className="mt-0.5 h-4 w-4 text-[#F7D3A5]" />
                 <div>
                   <p className="font-semibold text-[#FFE6C7]">Email</p>
-                  <p className="text-[#F9D8AC]">
-                    hello@fiacahya-snack.com
-                  </p>
+                  <p className="text-[#F9D8AC]">hello@fiacahya-snack.com</p>
                 </div>
               </li>
+
               {/* Instagram */}
               <li className="flex items-start gap-3">
                 <Instagram className="mt-0.5 h-4 w-4 text-[#F7D3A5]" />
@@ -117,6 +122,7 @@ export function Footer() {
               </li>
             </ul>
           </div>
+
         </div>
 
         {/* IKUTI KAMI + MENU UTAMA */}
@@ -155,7 +161,7 @@ export function Footer() {
               <ul className="space-y-1.5 text-sm md:text-base text-[#FDE8D5]">
                 {[
                   { label: "Home", href: "/" },
-                  { label: "Katalog", href: "/katalog" },
+                  { label: "Katalog", href: "/produk" },
                   { label: "Syarat & Ketentuan", href: "/syarat-ketentuan" },
                   { label: "Profil & Kontak", href: "/profil" },
                 ].map((item) => (
