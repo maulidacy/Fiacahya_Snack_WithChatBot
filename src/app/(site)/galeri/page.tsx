@@ -17,36 +17,36 @@ const montserrat = Montserrat({
 // Pakai beberapa foto ilustrasi dari Unsplash (bisa diganti ke asset sendiri)
 const galleryImages = [
   {
-    src: "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80",
-    alt: "Display aneka pastry dan roti.",
+    src: "https://res.cloudinary.com/dxdb3dj8f/image/upload/v1765125292/20240824_143135_rz029n.jpg",
+    alt: "Serabi",
   },
   {
-    src: "https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=1200&q=80",
-    alt: "Snack box yang siap dikirim.",
+    src: "https://res.cloudinary.com/dxdb3dj8f/image/upload/v1765125285/20230226_093848_w4fqmi.jpg",
+    alt: "Tart potong",
   },
   {
-    src: "https://images.unsplash.com/photo-1551024601-bec78bea9cbc?auto=format&fit=crop&w=1200&q=80",
-    alt: "Cake dan dessert di meja display.",
+    src: "https://res.cloudinary.com/dxdb3dj8f/image/upload/v1765125282/20240801_142542_fbjhve.jpg",
+    alt: "oven",
   },
   {
-    src: "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1200&q=80",
-    alt: "Proses plating pastry.",
+    src: "https://res.cloudinary.com/dxdb3dj8f/image/upload/v1765125294/20250201_111233_auqwh7.jpg",
+    alt: "carabikang",
   },
   {
-    src: "https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1200&q=80",
-    alt: "Kue basah tradisional.",
+    src: "https://res.cloudinary.com/dxdb3dj8f/image/upload/v1765129014/20250214_115957_qsvxnp.jpg",
+    alt: "donat",
   },
   {
-    src: "https://images.unsplash.com/photo-1509440510228-5e6155e6f9ac?auto=format&fit=crop&w=1200&q=80",
-    alt: "Proses produksi di dapur.",
+    src: "https://res.cloudinary.com/dxdb3dj8f/image/upload/v1765125295/20240803_124157_t0am8p.jpg",
+    alt: "putu ayu",
   },
   {
-    src: "https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=1200&q=80",
-    alt: "Aneka bahan baku baking.",
+    src: "https://res.cloudinary.com/dxdb3dj8f/image/upload/v1765129009/20250806_095033_xhziep.jpg",
+    alt: "adonan",
   },
   {
-    src: "https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=1200&q=80",
-    alt: "Suasana dapur dan cooling rack.",
+    src: "https://res.cloudinary.com/dxdb3dj8f/image/upload/v1765129003/20250221_141351_xre3kh.jpg",
+    alt: "nastar",
   },
 ];
 

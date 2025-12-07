@@ -84,8 +84,41 @@ export default function ProduksiPage() {
     >
       <Navbar />
 
+      {/* HIGHLIGHT STAT – kapasitas & jadwal */}
+      <section className="bg-[#FFF5EB] dark:bg-[#080607] py-8 md:py-10">
+        <div className="max-w-6xl mx-auto px-4">
+          <motion.div
+            variants={stagger}
+            initial="hidden"
+            animate="visible"
+            className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4"
+          >
+            <HighlightCard
+              label="Kapasitas rata-rata"
+              value="500–800 pcs/hari"
+              desc="Tergantung kombinasi produk basah & kering."
+            />
+            <HighlightCard
+              label="Jadwal produksi"
+              value="16.00 – 05.00"
+              desc="Shift baking sore & malam, cooling di pagi hari."
+            />
+            <HighlightCard
+              label="Cut-off order"
+              value="H-1 • 15.00 WIB"
+              desc="Order besar disarankan H-2 untuk slot aman."
+            />
+            <HighlightCard
+              label="Model produksi"
+              value="Made to order"
+              desc="Produksi disesuaikan jadwal & kuantitas pesanan."
+            />
+          </motion.div>
+        </div>
+      </section>
+
       {/* ALUR PRODUKSI – TIMELINE DI TENGAH */}
-      <section className="bg-transparent pb-8 md:pb-12">
+      <section className="bg-transparent pt-6 pb-10 md:pt-8 md:pb-14">
         <div className="max-w-6xl mx-auto px-4">
           <motion.div
             variants={fadeUp}
@@ -123,7 +156,6 @@ export default function ProduksiPage() {
               <ProductionStep
                 key={item.step}
                 {...item}
-                // step 1 (idx 0) di KANAN, lalu kiri, lalu kanan, dst
                 align={idx % 2 === 0 ? "right" : "left"}
               />
             ))}
@@ -131,41 +163,8 @@ export default function ProduksiPage() {
         </div>
       </section>
 
-      {/* HIGHLIGHT STAT – kapasitas & jadwal */}
-      <section className="bg-transparent pb-6 md:pb-10">
-        <div className="max-w-6xl mx-auto px-4">
-          <motion.div
-            variants={stagger}
-            initial="hidden"
-            animate="visible"
-            className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4"
-          >
-            <HighlightCard
-              label="Kapasitas rata-rata"
-              value="500–800 pcs / hari"
-              desc="Tergantung kombinasi produk basah & kering."
-            />
-            <HighlightCard
-              label="Jadwal produksi"
-              value="04.00 – 16.00"
-              desc="Shift baking pagi & siang, cooling di sore hari."
-            />
-            <HighlightCard
-              label="Cut-off order"
-              value="H-1 • 15.00 WIB"
-              desc="Order besar disarankan H-2 untuk slot aman."
-            />
-            <HighlightCard
-              label="QC & dokumentasi"
-              value="Setiap batch"
-              desc="Pencatatan suhu, waktu proses, dan hasil visual."
-            />
-          </motion.div>
-        </div>
-      </section>
-
       {/* QC & HIGIENITAS */}
-      <section className="bg-transparent pb-8 md:pb-12">
+      <section className="bg-[#FFF9F3] dark:bg-[#050405] py-8 md:py-12">
         <div className="max-w-6xl mx-auto px-4">
           <motion.div
             variants={fadeUp}
@@ -201,7 +200,7 @@ export default function ProduksiPage() {
               Icon={ShieldCheck}
             />
             <InfoCard
-              title="Sampling QC"
+              title="Batch Quality Control"
               text="Beberapa sample dari tiap batch dicek tekstur, rasa, dan tampilan sebelum dikemas atau dikirim."
               Icon={Search}
             />
@@ -210,14 +209,14 @@ export default function ProduksiPage() {
       </section>
 
       {/* KEMASAN & PENGIRIMAN */}
-      <section className="bg-transparent pb-10 md:pb-14">
+      <section className="dark:bg-[#040304] py-10 md:py-14">
         <div className="max-w-6xl mx-auto px-4">
           <motion.div
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.25 }}
-            className="rounded-3xl border border-border-soft bg-white/80 px-5 py-5 md:px-6 md:py-6 shadow-soft
+            className="rounded-3xl border border-border-soft bg-white/90 px-5 py-5 md:px-6 md:py-6 shadow-soft
               dark:border-border-soft-dark dark:bg-[#111111]/95"
           >
             <div className="flex flex-col md:flex-row gap-5 md:gap-8 justify-between">
@@ -234,11 +233,11 @@ export default function ProduksiPage() {
               </div>
 
               <div className="flex flex-col gap-2 text-xs text-[#6A4A35] dark:text-neutral-200">
-                <p>• Pengiriman utama area: Jabodetabek</p>
-                <p>• Jarak ideal konsumsi: 4–6 jam setelah produk diterima</p>
-                <p>• Untuk kerja sama rutin, jadwal bisa di-lock per minggu</p>
+                <p>Pengiriman utama area: Gubug</p>
+                <p>Jarak ideal konsumsi: 4–6 jam setelah produk diterima</p>
+                <p>Untuk kerja sama rutin, jadwal bisa di-lock per minggu</p>
                 <a
-                  href="https://wa.me/6281234567890"
+                  href="https://wa.me/62882008526405"
                   className="mt-2 inline-flex items-center justify-center self-start rounded-full bg-[#3E2A20] text-white text-xs font-semibold px-4 py-2 shadow-md hover:-translate-y-0.5 active:translate-y-0 transition-transform dark:bg-neutral-100 dark:text-neutral-900"
                 >
                   Diskusikan kebutuhan produksi
@@ -292,7 +291,7 @@ function HighlightCard({
   return (
     <motion.div
       variants={fadeUp}
-      className="rounded-2xl border border-border-soft bg-white/90 px-4 py-4 shadow-soft
+      className="rounded-2xl border border-border-soft bg-white/95 px-4 py-4 shadow-soft
         dark:border-border-soft-dark dark:bg-[#111111]/95"
     >
       <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#B47A45] mb-1 dark:text-amber-200/90">
@@ -311,7 +310,7 @@ function ProductionStep({
   title,
   text,
   Icon,
-  align, // "right" = card di kanan, "left" = card di kiri
+  align,
 }: ProductionStepItem & { align: "left" | "right" }) {
   const isRight = align === "right";
 
@@ -325,7 +324,7 @@ function ProductionStep({
         {!isRight && <StepCard title={title} text={text} align="right" />}
       </div>
 
-      {/* NODE DI TENGAH: kotak icon di atas garis */}
+      {/* NODE DI TENGAH */}
       <div className="flex items-center justify-center z-[1]">
         <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-border-soft bg-white shadow-soft dark:border-border-soft-dark dark:bg-[#15100C]">
           <Icon className="h-5 w-5 text-[#B47A45] dark:text-amber-200" />
@@ -359,7 +358,7 @@ function StepCard({
   return (
     <div
       className={`
-        max-w-md rounded-2xl border border-border-soft bg-white/90 px-4 py-3 shadow-soft
+        max-w-md rounded-2xl border border-border-soft bg-white/95 px-4 py-3 shadow-soft
         dark:border-border-soft-dark dark:bg-[#111111]/95
         ${textAlign} mx-auto
       `}
@@ -386,7 +385,7 @@ function InfoCard({
   return (
     <motion.div
       variants={fadeUp}
-      className="rounded-2xl border border-border-soft bg-white/90 px-4 py-4 shadow-soft text-xs
+      className="rounded-2xl border border-border-soft bg-white/95 px-4 py-4 shadow-soft text-xs
         dark:border-border-soft-dark dark:bg-[#111111]/95"
     >
       <div className="mb-2 flex items-center gap-2">

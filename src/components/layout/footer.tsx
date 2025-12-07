@@ -142,13 +142,6 @@ export function Footer() {
                 </div>
               </div>
             </div>
-
-            <a
-              href="https://wa.me/6281234567890"
-              className="inline-flex items-center justify-center rounded-full bg-[#3E2A20] px-5 py-2 text-xs font-semibold text-white shadow-[0_18px_45px_rgba(0,0,0,0.6)] hover:-translate-y-0.5 active:translate-y-0 transition-transform"
-            >
-              Konsultasi paket via WhatsApp
-            </a>
           </div>
         </div>
 

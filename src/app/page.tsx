@@ -49,17 +49,52 @@ const staggerContainer = {
 
 const testimonials = [
   {
-    name: "Nadia – Corporate Catering",
+    name: "Nadia - Corporate Catering",
     text: "Snack box Fiacahya selalu fresh dan rapi. Klien kami berkali-kali minta repeat order.",
   },
   {
-    name: "Rama – Event Organizer",
+    name: "Rama - Event Organizer",
     text: "Rasanya premium, packaging elegan. Sangat membantu untuk acara formal dan wedding.",
   },
   {
-    name: "Dina – Coffee Shop Owner",
+    name: "Dina - Coffee Shop Owner",
     text: "Cocok banget jadi pairing kopi. Stock selalu konsisten dan tepat waktu.",
   },
+];
+
+const HERO_IMAGES = [
+  {
+    src: "https://res.cloudinary.com/dxdb3dj8f/image/upload/v1765126421/20250727_103358_sjfm4p.jpg",
+    alt: "Bolu pandan ketan",
+  },
+  {
+    src: "https://res.cloudinary.com/dxdb3dj8f/image/upload/v1765125273/10_oltq2d.png",
+    alt: "Kue lapis strawberry",
+  },
+  {
+    src: "https://res.cloudinary.com/dxdb3dj8f/image/upload/v1765126417/20250529_110548_ouamvw.jpg",
+    alt: "Bolu gula merah",
+  },
+  {
+    src: "https://res.cloudinary.com/dxdb3dj8f/image/upload/v1765126414/20240803_122800_uz1kkb.jpg",
+    alt: "Putu ayu",
+  },
+  {
+    src: "https://res.cloudinary.com/dxdb3dj8f/image/upload/v1765126411/20240801_144346_tcxzku.jpg",
+    alt: "Roti sobek isi cokelat",
+  },
+  {
+    src: "https://res.cloudinary.com/dxdb3dj8f/image/upload/v1765125282/20240523_121342_labtab.jpg",
+    alt: "Cupcake",
+  },
+  {
+    src: "https://res.cloudinary.com/dxdb3dj8f/image/upload/v1765129009/20250219_114708_vzmycu.jpg",
+    alt: "egg roll",
+  },
+  {
+    src: "https://res.cloudinary.com/dxdb3dj8f/image/upload/v1765129009/20250519_103959_gsxhly.jpg",
+    alt: "lapis pandan",
+  }
 ];
 
 export default function HomePage() {
@@ -160,9 +195,9 @@ export default function HomePage() {
               variants={fadeUp}
               className="mt-6 flex flex-wrap gap-5 text-[11px] md:text-xs text-[#8C6647] dark:text-neutral-300"
             >
-              <HeroStat label="Snack Box Harian" value="500+ pcs" />
+              <HeroStat label="Snack Box Mingguan" value="500+ pcs" />
               <HeroStat label="Repeat Order Bulanan" value="90%+" />
-              <HeroStat label="Kota Terlayani" value="Jabodetabek" />
+              <HeroStat label="Kota Terlayani" value="Gubug, Grobogan" />
             </motion.div>
           </motion.div>
 
@@ -237,9 +272,6 @@ export default function HomePage() {
                 kebutuhan paket.
               </SectionText>
             </div>
-            <div className="hidden md:block text-xs text-[#946642] dark:text-neutral-300">
-              *Foto ilustrasi produk dengan mood serupa.
-            </div>
           </motion.div>
 
           <motion.div
@@ -250,25 +282,25 @@ export default function HomePage() {
             className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
           >
             <ProductCard
-              title="Assorted Pastry Box"
-              desc="Croissant mini, danish, dan puff pastry seleksi chef."
-              price="Mulai 35K / box"
-              tag="Favorit Kantor"
-              img="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1200&q=80"
-            />
-            <ProductCard
-              title="Traditional Snack Platter"
+              title="Traditional Snack Box"
               desc="Kue basah nusantara dengan tampilan modern & bersih."
-              price="Mulai 28K / box"
-              tag="Acara Keluarga"
-              img="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80"
+              price="Mulai 8K/box"
+              tag="Favorit Kantor"
+              img="https://i.pinimg.com/736x/9b/47/50/9b475077d9f9f7713b401cc7380b8733.jpg"
             />
             <ProductCard
-              title="Premium Mini Cake"
-              desc="Mini cake individual dengan dekor minimalis elegan."
-              price="Mulai 42K / pcs"
-              tag="Hantaran & Event"
-              img="https://images.unsplash.com/photo-1614707267537-455917cd8035?auto=format&fit=crop&w=1200&q=80"
+              title="Baked Sponge Cake"
+              desc="Bolu panggang dengan tekstur lembut dan rasa autentik."
+              price="Mulai 35K/Loyang"
+              tag="Acara Keluarga"
+              img="https://res.cloudinary.com/dxdb3dj8f/image/upload/v1765124678/20240730_122558_ljvi7j.jpg"
+            />
+            <ProductCard
+              title="Traditional Tampah Snack"
+              desc="Kue basah nusantara dengan tampilan modern & bersih."
+              price="Mulai 120K/Tampah"
+              tag="Event & Wedding"
+              img="https://i.pinimg.com/736x/33/9a/2d/339a2d604691405fe24c8af2792b5ca4.jpg"
             />
           </motion.div>
         </div>
@@ -774,25 +806,51 @@ function BakeryParticles() {
 }
 
 function HeroParallax() {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(
+      () => setIndex((prev) => (prev + 1) % HERO_IMAGES.length),
+      7000
+    );
+    return () => clearInterval(id);
+  }, []);
+
   return (
     <div className="relative h-full w-full">
+      {/* FRAME BESAR */}
       <motion.div
         className="absolute inset-0 rounded-[2rem] bg-white/70 backdrop-blur shadow-[0_18px_60px_rgba(0,0,0,0.08)] overflow-hidden border border-[#E1C09A]/70 dark:bg-neutral-900/80 dark:border-neutral-700"
-        initial={{ y: 24, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
+        initial={{ opacity: 0, y: 24 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, ease: [0.22, 0.61, 0.36, 1] }}
       >
-        <Image
-          src="https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1600&q=80"
-          alt="Display kue dan pastry Fiacahya Snack"
-          fill
-          priority
-          sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 560px"
-          className="object-cover"
-        />
+        <div className="relative h-full w-full overflow-hidden">
+          <motion.div
+            className="flex h-full w-full"
+            animate={{ x: `-${index * 100}%` }}
+            transition={{ duration: 0.8, ease: [0.22, 0.61, 0.36, 1] }}
+          >
+            {HERO_IMAGES.map((img, i) => (
+              <div
+                key={img.src}
+                className="relative h-full w-full flex-shrink-0"
+              >
+                <Image
+                  src={img.src}
+                  alt={img.alt || "Fiacahya Snack hero"}
+                  fill
+                  priority={i === 0}
+                  sizes="(max-width:768px) 100vw, (max-width:1200px) 50vw, 560px"
+                  className="object-cover"
+                />
+              </div>
+            ))}
+          </motion.div>
+        </div>
       </motion.div>
 
-      {/* layer parallax 1 */}
+      {/* KIRI BAWAH */}
       <motion.div
         className="hidden sm:block absolute -bottom-6 left-2 w-40 h-32 rounded-3xl overflow-hidden border border-[#E1C09A]/70 bg-white/90 shadow-[0_14px_45px_rgba(0,0,0,0.08)] dark:bg-neutral-900/90 dark:border-neutral-700"
         initial={{ y: 40, opacity: 0 }}
@@ -801,15 +859,15 @@ function HeroParallax() {
         whileHover={{ y: -6 }}
       >
         <Image
-          src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=800&q=80"
-          alt="Snack box Fiacahya"
+          src="https://res.cloudinary.com/dxdb3dj8f/image/upload/v1765125272/20230101_122120_gl3vcl.jpg"
+          alt="Cake tart oreo"
           fill
           sizes="160px"
           className="object-cover"
         />
       </motion.div>
 
-      {/* layer parallax 2 */}
+      {/* KANAN ATAS */}
       <motion.div
         className="hidden sm:block absolute -top-6 right-0 w-32 h-32 rounded-3xl overflow-hidden border border-[#E1C09A]/70 bg-white/90 shadow-[0_14px_45px_rgba(0,0,0,0.08)] dark:bg-neutral-900/90 dark:border-neutral-700"
         initial={{ y: -40, opacity: 0 }}
@@ -818,10 +876,10 @@ function HeroParallax() {
         whileHover={{ y: -4 }}
       >
         <Image
-          src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=800&q=80"
-          alt="Pastry Fiacahya"
+          src="https://res.cloudinary.com/dxdb3dj8f/image/upload/v1765125278/20240528_123847_gcangb.jpg"
+          alt="Muffin"
           fill
-          sizes="128px"
+          sizes="160px"
           className="object-cover"
         />
       </motion.div>
