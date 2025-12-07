@@ -2,11 +2,9 @@
 
 import { motion } from "framer-motion";
 import {
-  MapPin,
   Phone,
   Mail,
   Instagram,
-  Clock,
   Youtube,
   Facebook,
   Twitter,
@@ -44,8 +42,10 @@ export function Footer() {
       {/* isi footer */}
       <div className="relative z-10">
         {/* TOP AREA */}
-        <div className="max-w-6xl mx-auto px-4 py-8 md:py-10 grid gap-8 md:grid-cols-[1.4fr,1.1fr,1.1fr]">
-          {/* Brand + tagline */}
+        {/* Tata letak 2 kolom: Kiri (Brand & Deskripsi) | Kanan (Kontak) */}
+        <div className="max-w-6xl mx-auto px-4 py-8 md:py-10 grid gap-8 md:grid-cols-[1.5fr,1fr]">
+          
+          {/* KOLOM KIRI: Brand + tagline */}
           <div className="space-y-4">
             <div className="flex items-center gap-3">
               <div className="h-10 w-10 rounded-2xl bg-gradient-to-tr from-[#C48A4A] to-[#F4C58A] flex items-center justify-center text-xs font-semibold text-white shadow-[0_14px_40px_rgba(0,0,0,0.55)]">
@@ -81,12 +81,13 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Kontak */}
+          {/* KOLOM KANAN: Kontak */}
           <div className="space-y-3 text-sm">
             <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#F7D3A5]">
               Kontak
             </p>
             <ul className="space-y-2 text-xs md:text-sm">
+              {/* WhatsApp */}
               <li className="flex items-start gap-3">
                 <Phone className="mt-0.5 h-4 w-4 text-[#F7D3A5]" />
                 <div>
@@ -96,6 +97,7 @@ export function Footer() {
                   </p>
                 </div>
               </li>
+              {/* Email */}
               <li className="flex items-start gap-3">
                 <Mail className="mt-0.5 h-4 w-4 text-[#F7D3A5]" />
                 <div>
@@ -105,6 +107,7 @@ export function Footer() {
                   </p>
                 </div>
               </li>
+              {/* Instagram */}
               <li className="flex items-start gap-3">
                 <Instagram className="mt-0.5 h-4 w-4 text-[#F7D3A5]" />
                 <div>
@@ -113,35 +116,6 @@ export function Footer() {
                 </div>
               </li>
             </ul>
-          </div>
-
-          {/* Produksi & Pengiriman */}
-          <div className="space-y-3 text-sm">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#F7D3A5]">
-              Produksi & Pengiriman
-            </p>
-            <div className="space-y-2 text-xs md:text-sm">
-              <div className="flex items-start gap-3">
-                <MapPin className="mt-0.5 h-4 w-4 text-[#F7D3A5]" />
-                <div>
-                  <p className="font-semibold text-[#FFE6C7]">
-                    Fiacahya Kitchen Lab
-                  </p>
-                  <p className="text-[#F9D8AC]">
-                    Jakarta, Indonesia · Pengiriman utama area Jabodetabek.
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <Clock className="mt-0.5 h-4 w-4 text-[#F7D3A5]" />
-                <div>
-                  <p className="font-semibold text-[#FFE6C7]">Jam produksi</p>
-                  <p className="text-[#F9D8AC]">
-                    04.00 – 16.00 WIB · Cut-off order besar H-1 pukul 15.00.
-                  </p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
 
@@ -181,8 +155,8 @@ export function Footer() {
               <ul className="space-y-1.5 text-sm md:text-base text-[#FDE8D5]">
                 {[
                   { label: "Home", href: "/" },
-                  { label: "Produk", href: "/produk" },
-                  { label: "Produksi", href: "/produksi" },
+                  { label: "Katalog", href: "/katalog" },
+                  { label: "Syarat & Ketentuan", href: "/syarat-ketentuan" },
                   { label: "Profil & Kontak", href: "/profil" },
                 ].map((item) => (
                   <li key={item.href}>
