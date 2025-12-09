@@ -128,7 +128,7 @@ Assistant mematuhi aturan bisnis yang di-hardcode dalam system prompt:
 1. **Gaya Bahasa**: Ramah, jelas, singkat, menggunakan bahasa Indonesia, memanggil pelanggan "kak"
 2. **Fokus**: Menu, harga, paket snack box, cara pesan, jam produksi, estimasi kapasitas
 3. **Jawaban**: Maksimal 3-4 kalimat, spesifik, tidak mengulang informasi sebelumnya
-4. **Harga**: Jika tidak ada di data sistem, jangan mengarang — arahkan konfirmasi via WhatsApp
+4. **Harga**: Jika tidak ada di data sistem, jangan mengarang - arahkan konfirmasi via WhatsApp
 5. **Batasan**: Hanya menjawab konteks snack/bakery, topik lain dijawab singkat
 
 #### Mengubah Model AI
