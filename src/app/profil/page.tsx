@@ -5,6 +5,7 @@ import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { Playfair_Display, Montserrat } from "next/font/google";
 import { motion, AnimatePresence } from "framer-motion";
+import type { Variants } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import {
@@ -27,7 +28,7 @@ const montserrat = Montserrat({
   variable: "--font-sans",
 });
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 24 },
   visible: {
     opacity: 1,
@@ -36,7 +37,7 @@ const fadeUp = {
   },
 };
 
-const stagger = {
+const stagger: Variants = {
   hidden: {},
   visible: {
     transition: { staggerChildren: 0.12 },

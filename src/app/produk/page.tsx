@@ -1,20 +1,21 @@
 "use client";
 
-import Link from "next/link"; // ⬅️ TAMBAH INI
+import Link from "next/link";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { Playfair_Display, Montserrat } from "next/font/google";
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
+
 
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-serif" });
 const montserrat = Montserrat({ subsets: ["latin"], variable: "--font-sans" });
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 24 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: [0.22, 0.61, 0.36, 1] },
+    transition: { duration: 0.7, ease: [0.22, 0.61, 0.36, 1] },
   },
 };
 

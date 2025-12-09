@@ -1,0 +1,92 @@
+// src/app/api/fiacahya-assistant/route.ts
+import OpenAI from "openai";
+import { NextResponse } from "next/server";
+
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY,
+  // optional: timeout bawaan, biar nggak ngegantung lama
+  timeout: 15000, // 15 detik
+});
+
+const FIACA_HARDCODED_CONTEXT = `
+Kamu adalah asisten produksi & pemesanan Fiacahya Snack.
+
+• Brand: Fiacahya Snack
+• Lokasi utama: Gubug, Grobogan
+• Lini produk: kue basah, kue kering, cake/tart, snack box & paket acara.
+• Gaya bahasa: ramah, jelas, singkat, pakai bahasa Indonesia, panggil "kak".
+
+Aturan penting:
+1. Jawab maksimal 3–4 kalimat. Untuk pertanyaan sederhana cukup 1–2 kalimat.
+2. Jawab spesifik, jangan mengulang informasi yang sudah disebut di chat sebelumnya.
+3. Fokus pada: menu, harga, paket snack box, cara pesan, jam produksi, estimasi kapasitas.
+4. Jika harga / paket tidak ada di data sistem, jangan mengarang. Jelaskan bahwa harga bisa berubah dan arahkan untuk konfirmasi via WhatsApp Fiacahya Snack.
+5. Kalau pertanyaannya di luar konteks snack / bakery, jawab singkat bahwa kamu hanya asisten untuk Fiacahya Snack.
+`;
+
+export async function POST(req: Request) {
+  try {
+    const body = await req.json();
+    const userMessage: string = body.message;
+
+    if (!userMessage || typeof userMessage !== "string") {
+      return NextResponse.json(
+        { error: "Pesan tidak valid." },
+        { status: 400 }
+      );
+    }
+
+    if (!process.env.OPENAI_API_KEY) {
+      console.error("OPENAI_API_KEY belum di-set");
+      return NextResponse.json(
+        {
+          error:
+            "Konfigurasi server belum lengkap (API key belum di-set). Hubungi admin Fiacahya.",
+        },
+        { status: 500 }
+      );
+    }
+
+    const completion = await openai.chat.completions.create({
+      model: process.env.OPENAI_MODEL || "gpt-4o-mini",
+      messages: [
+        {
+          role: "system",
+          content: FIACA_HARDCODED_CONTEXT,
+        },
+        {
+          role: "user",
+          content: userMessage,
+        },
+      ],
+      // hemat token & jawaban pendek
+      max_tokens: 220,
+      temperature: 0.4,
+    });
+
+    const reply = completion.choices[0]?.message?.content?.trim() ?? "";
+
+    if (!reply) {
+      return NextResponse.json(
+        {
+          error: "Jawaban dari model kosong.",
+        },
+        { status: 500 }
+      );
+    }
+
+    return NextResponse.json({ reply });
+  } catch (err: any) {
+    console.error("Fiacahya assistant error:", err);
+
+    // kalau error dari OpenAI SDK, kadang ada detail di err.error atau err.message
+    return NextResponse.json(
+      {
+        error:
+          "Maaf kak, asisten lagi ada kendala saat menghubungi server AI. Coba lagi sebentar, ya.",
+        detail: err?.message ?? "unknown error",
+      },
+      { status: 500 }
+    );
+  }
+}

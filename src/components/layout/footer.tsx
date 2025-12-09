@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import {
   Phone,
   Mail,
@@ -10,12 +10,12 @@ import {
   Twitter,
 } from "lucide-react";
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 16 },
+const fadeUp: Variants = {
+  hidden: { opacity: 0, y: 24 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: [0.22, 0.61, 0.36, 1] },
+    transition: { duration: 0.7, ease: [0.22, 0.61, 0.36, 1] },
   },
 };
 
@@ -180,7 +180,7 @@ export function Footer() {
         </div>
 
         {/* BOTTOM BAR */}
-        <div className="border-t border-[#5B3623]/80 bg-[#2A180F] text-[11px] text-[#F9D8AC]">
+        <div className="border-t border-[#5B3623]/80 bg-[#3A261A] text-[11px] text-[#F9D8AC]">
           <div className="max-w-6xl mx-auto px-4 py-3 flex flex-col gap-1 md:flex-row md:items-center md:justify-between">
             <p>© {year} Fiacahya Snack. All rights reserved.</p>
             <p>Homemade with care · Delivered with precision.</p>

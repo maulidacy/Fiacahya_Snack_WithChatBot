@@ -9,9 +9,10 @@ import {
   type ElementType,
 } from "react";
 import { Playfair_Display, Montserrat } from "next/font/google";
-import { motion } from "framer-motion";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
+import { motion, type Variants } from "framer-motion";
+
 
 import {
   Flame,
@@ -29,7 +30,7 @@ const playfair = Playfair_Display({
 });
 const montserrat = Montserrat({ subsets: ["latin"], variable: "--font-sans" });
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 24 },
   visible: {
     opacity: 1,
