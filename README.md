@@ -1,4 +1,4 @@
-# Fiacahya Snack — Production & Ordering Web Platform
+# Fiacahya Snack - Production & Ordering Web Platform
 
 [![Next.js](https://img.shields.io/badge/Next.js-14-black)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.9-blue)](https://www.typescriptlang.org/)
@@ -33,7 +33,7 @@ Fiacahya Snack adalah platform web produksi dan pemesanan untuk bakery rumahan y
 - **Language**: TypeScript
 - **Styling**: TailwindCSS v4
 - **Animations**: Framer Motion
-- **AI Integration**: OpenAI API (gpt-4.1-mini)
+- **AI Integration**: OpenAI API (gpt-4o-mini)
 - **Theme Management**: next-themes
 - **Icons**: Lucide React
 - **Build Tools**: ESLint, PostCSS, Autoprefixer
@@ -194,18 +194,13 @@ POST /api/fiacahya-assistant
 - **Latency**: Response time lebih lama untuk model yang lebih kompleks
 - **Over-reliance**: Pastikan fallback jika API down
 
-## 📝 Lisensi
+## 📞 Contact
 
-**MIT License** — Gunakan bebas untuk kebutuhan non-komersial atau komersial.
+- **Name**: Maulida Cahya
+- **Email**: cahyamaulida011@gmail.com
 
-Copyright (c) 2024 Fiacahya Snack
+Untuk pertanyaan atau kolaborasi, silakan hubungi melalui email di atas.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+## 📝 License
 
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
----
-
-**Kontak**: Untuk pertanyaan atau kolaborasi, hubungi admin Fiacahya Snack via WhatsApp atau email di website resmi.
+This project is licensed under the MIT License.
