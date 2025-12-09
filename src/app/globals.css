@@ -41,3 +41,13 @@ html.dark body {
   background-color: #050608; /* global dark */
   color: #F3F3E8;
 }
+
+/* hilangkan scrollbar tapi tetap bisa di-scroll */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE & Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;             /* Chrome, Safari, Opera */
+}

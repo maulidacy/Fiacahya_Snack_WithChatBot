@@ -2,6 +2,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/ui/theme-provider";
+import { AssistantRoot } from "@/components/chatbot/assistant-root";
 
 export const metadata: Metadata = {
   title: "Fiacahya Snack",
@@ -14,15 +15,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="id" suppressHydrationWarning>
       <body>
+        {/* kalau memang pakai ThemeProvider, bungkus di sini */}
         <ThemeProvider
-          attribute="class"       // <html class="dark" />
-          defaultTheme="light"    // mulai dari light
-          enableSystem={true}
+          attribute="class"
+          defaultTheme="light"
+          enableSystem
           disableTransitionOnChange
         >
           {children}
+          {/* Chatbot muncul di semua halaman, load-nya di client */}
+          <AssistantRoot />
         </ThemeProvider>
       </body>
     </html>
