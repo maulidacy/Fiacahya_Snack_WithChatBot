@@ -201,6 +201,8 @@ POST /api/fiacahya-assistant
 
 Untuk pertanyaan atau kolaborasi, silakan hubungi melalui email di atas.
 
-## 📝 License
+## License
 
-This project is licensed under the MIT License.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+Copyright © 2025 maulidacy.
