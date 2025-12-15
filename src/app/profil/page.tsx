@@ -46,16 +46,16 @@ const stagger: Variants = {
 
 const heroImages = [
   {
-    src: "https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=1400&q=80",
-    caption: "Batch kue basah sedang dipersiapkan di dapur.",
+    src: "https://res.cloudinary.com/dxdb3dj8f/image/upload/v1765796397/Screenshot_2025-08-06_152752_2_mdco6x.jpg",
+    caption: "Aneka roti isi premium untuk kebutuhan acara.",
   },
   {
-    src: "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1400&q=80",
-    caption: "Display snack box yang siap dikirim ke pelanggan.",
+    src: "https://res.cloudinary.com/dxdb3dj8f/image/upload/v1765796397/20240601_120359_GTZkQBpo1q_dcx09m.jpg",
+    caption: "Aneka bolu panggang premium untuk kebutuhan acara.",
   },
   {
-    src: "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1400&q=80",
-    caption: "Aneka pastry premium untuk kebutuhan acara.",
+    src: "https://res.cloudinary.com/dxdb3dj8f/image/upload/v1765796396/IMG-20240403-WA0006_8Lm6PyEC2h_uc0rip.jpg",
+    caption: "Aneka kue kering premium untuk kebutuhan acara.",
   },
 ];
 
@@ -92,13 +92,10 @@ export default function ProfilPage() {
                 Profil Usaha
               </p>
               <h1 className="font-serif text-2xl md:text-3xl lg:text-4xl mb-3 text-[#3A261A] dark:text-neutral-50">
-                FiaCahya Snack - produksi snack rumahan dengan standar profesional.
+                FiaCahya Snack - produksi aneka kue rumahan dengan standar profesional.
               </h1>
               <p className="text-sm md:text-base text-[#6A4A35] dark:text-neutral-200 leading-relaxed">
-                FiaCahya Snack adalah unit produksi aneka kue basah tradisional, kue kering,
-                dan kue tart untuk berbagai kebutuhan acara. Kami fokus pada rasa yang
-                konsisten, higienitas dapur, dan dokumentasi batch harian sehingga
-                pelanggan mendapatkan kualitas yang sama di setiap pesanan.
+                FiaCahya Snack adalah unit produksi aneka kue basah tradisional, roti isi, bolu panggang, kue kering, dan cake tart untuk berbagai kebutuhan acara. Kami fokus pada rasa yang konsisten, kebersihan dapur, serta tampilan produk yang rapi sehingga pelanggan selalu mendapatkan kualitas terbaik di setiap pesanan.
               </p>
             </motion.div>
 
@@ -145,8 +142,8 @@ export default function ProfilPage() {
                     onClick={() => setCurrentHero(idx)}
                     aria-label={`Lihat gambar ${idx + 1}`}
                     className={`h-1.5 rounded-full transition-all ${idx === currentHero
-                        ? "w-5 bg-white dark:bg-amber-300"
-                        : "w-2 bg-white/50 dark:bg-neutral-500 hover:bg-white/80 dark:hover:bg-neutral-300"
+                      ? "w-5 bg-white dark:bg-amber-300"
+                      : "w-2 bg-white/50 dark:bg-neutral-500 hover:bg-white/80 dark:hover:bg-neutral-300"
                       }`}
                   />
                 ))}
@@ -174,12 +171,8 @@ export default function ProfilPage() {
                 dark:border-neutral-800 dark:bg-[#111111]/95"
             >
               <SectionLabel>Visi</SectionLabel>
-              <h2 className="font-serif text-lg md:text-xl text-[#3A261A] dark:text-neutral-50 mb-2">
-                Menjadi mitra snack yang konsisten, higienis, dan terpercaya.
-              </h2>
               <SectionText>
-                Menjadi pilihan utama untuk kebutuhan kue dan snack rumahan berkualitas
-                hotel bintang lima, baik untuk keluarga maupun korporasi.
+                Menjadi mitra penyedia aneka kue rumahan yang terpercaya, konsisten dalam kualitas, dan selalu memberikan pengalaman rasa yang menyenangkan di setiap acara.
               </SectionText>
             </motion.div>
 
@@ -191,10 +184,10 @@ export default function ProfilPage() {
             >
               <SectionLabel>Misi</SectionLabel>
               <ul className="list-disc pl-5 space-y-1.5 text-xs md:text-sm text-[#6A4A35] dark:text-neutral-200">
-                <li>Menjaga cita rasa kue tradisional dengan standar produksi modern.</li>
-                <li>Menerapkan sistem batch & QC yang terdokumentasi dengan baik.</li>
-                <li>Melayani pesanan dengan tepat waktu dan komunikasi yang jelas.</li>
-                <li>Mengembangkan variasi produk sesuai kebutuhan pelanggan & tren acara.</li>
+                <li>Menghadirkan produk dengan kualitas rasa yang stabil melalui proses produksi yang rapi dan higienis.</li>
+                <li>Memberikan pelayanan yang responsif, jelas, dan tepat waktu untuk setiap jenis pesanan.</li>
+                <li>Mengembangkan variasi menu yang relevan dengan kebutuhan pelanggan dan tren acara.</li>
+                <li>Menjaga tampilan produk tetap cantik & rapi sehingga layak untuk segala jenis acara formal maupun keluarga.</li>
               </ul>
             </motion.div>
           </motion.div>
@@ -226,14 +219,16 @@ export default function ProfilPage() {
           >
             <ValueCard
               title="Konsistensi Rasa"
-              text="Takaran resep dan prosedur produksi terdokumentasi, memastikan rasa stabil dari batch ke batch."
+              text="Takaran resep yang terjaga dan proses produksi yang rapi memastikan setiap produk memiliki kualitas rasa yang stabil."
               Icon={Sparkles}
             />
+
             <ValueCard
-              title="Kebersihan & QC"
-              text="Setiap batch melewati pengecekan visual dan sampling rasa, dilengkapi catatan QC sederhana."
+              title="Higienis & Terawat"
+              text="Proses produksi dilakukan dengan standar kebersihan yang baik, menjaga kepercayaan pelanggan pada setiap pesanan."
               Icon={ShieldCheck}
             />
+
             <ValueCard
               title="Fleksibel untuk Acara"
               text="Melayani snack box, paket acara, hingga kebutuhan custom sesuai tema dan jumlah tamu."
@@ -273,8 +268,8 @@ export default function ProfilPage() {
                     <p className="font-semibold text-[#3A261A] dark:text-neutral-50">
                       Alamat Produksi
                     </p>
-                    <p>Jl. Contoh No. 123, Kawasan Industri, Kota</p>
-                    <p>FiaCahya Kitchen Lab</p>
+                    <p>Ds. Tungu RT12/RW02 Kec. Godong Kab. Grobogan</p>
+                    <p>FiaCahya Kitchen</p>
                   </div>
                 </div>
 
@@ -286,7 +281,7 @@ export default function ProfilPage() {
                     <p className="font-semibold text-[#3A261A] dark:text-neutral-50">
                       WhatsApp
                     </p>
-                    <p>0812-0000-0000 (Admin FiaCahya Snack)</p>
+                    <p>0882-0085-2640-5 (Admin FiaCahya Snack)</p>
                   </div>
                 </div>
 
@@ -298,7 +293,7 @@ export default function ProfilPage() {
                     <p className="font-semibold text-[#3A261A] dark:text-neutral-50">
                       Email Produksi
                     </p>
-                    <p>produksi@fiacahyasnack.com</p>
+                    <p>fiacahyasnackk@gmail.com</p>
                   </div>
                 </div>
 
@@ -310,8 +305,8 @@ export default function ProfilPage() {
                     <p className="font-semibold text-[#3A261A] dark:text-neutral-50">
                       Jam Operasional
                     </p>
-                    <p>Produksi: 04.00 – 16.00 WIB</p>
-                    <p>Admin pesanan: 08.00 – 20.00 WIB</p>
+                    <p>Produksi: 16.00 - 05.00 WIB</p>
+                    <p>Admin pesanan: 08.00 - 20.00 WIB</p>
                   </div>
                 </div>
               </div>
@@ -341,7 +336,7 @@ export default function ProfilPage() {
               </ul>
 
               <a
-                href="https://wa.me/6281200000000"
+                href="https://wa.me/62882008526405"
                 className="mt-4 inline-flex items-center justify-center rounded-full bg-[#3E2A20] text-white text-xs font-semibold px-4 py-2 shadow-md hover:-translate-y-0.5 active:translate-y-0 transition-transform dark:bg-neutral-100 dark:text-neutral-900"
               >
                 Konsultasi pesanan via WhatsApp

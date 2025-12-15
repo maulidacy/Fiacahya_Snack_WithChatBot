@@ -14,7 +14,6 @@ import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { motion, type Variants } from "framer-motion";
 
-
 import {
   Flame,
   ShieldCheck,
@@ -43,24 +42,34 @@ const fadeUp: Variants = {
 const staggerContainer = {
   hidden: {},
   visible: {
-    transition: {
-      staggerChildren: 0.12,
-    },
+    transition: { staggerChildren: 0.12 },
   },
 };
 
-const testimonials = [
+type Testimonial = {
+  name: string;
+  text: string;
+  image: string; // wajib ada biar TS aman
+};
+
+const testimonials: Testimonial[] = [
   {
     name: "Nadia - Corporate Catering",
     text: "Snack box Fiacahya selalu fresh dan rapi. Klien kami berkali-kali minta repeat order.",
+    image:
+      "https://i.pinimg.com/736x/9b/47/50/9b475077d9f9f7713b401cc7380b8733.jpg",
   },
   {
     name: "Rama - Event Organizer",
     text: "Rasanya premium, packaging elegan. Sangat membantu untuk acara formal dan wedding.",
+    image:
+      "https://res.cloudinary.com/dxdb3dj8f/image/upload/v1765796396/IMG_20230414_150505_159_zefciv.jpg",
   },
   {
     name: "Dina - Coffee Shop Owner",
     text: "Cocok banget jadi pairing kopi. Stock selalu konsisten dan tepat waktu.",
+    image:
+      "https://res.cloudinary.com/dxdb3dj8f/image/upload/v1765796407/Kroket_jkknpg.jpg",
   },
 ];
 
@@ -91,30 +100,29 @@ const HERO_IMAGES = [
   },
   {
     src: "https://res.cloudinary.com/dxdb3dj8f/image/upload/v1765129009/20250219_114708_vzmycu.jpg",
-    alt: "egg roll",
+    alt: "Egg roll",
   },
   {
     src: "https://res.cloudinary.com/dxdb3dj8f/image/upload/v1765129009/20250519_103959_gsxhly.jpg",
-    alt: "lapis pandan",
-  }
-];
+    alt: "Lapis pandan",
+  },
+] as const;
 
 export default function HomePage() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
 
-  // auto-slide testimonial carousel
   useEffect(() => {
     const id = setInterval(
-      () => setCurrentTestimonial((prev) => (prev + 1) % testimonials.length),
-      6000
+      () =>
+        setCurrentTestimonial((prev) => (prev + 1) % testimonials.length),
+      6000,
     );
     return () => clearInterval(id);
   }, []);
 
-  // tombol “Buka Chatbot”
   const focusChatbot = useCallback(() => {
     const btn = document.querySelector<HTMLButtonElement>(
-      'button[aria-label="Buka Asisten Produksi AI"]'
+      'button[aria-label="Buka Asisten Produksi AI"]',
     );
     btn?.click();
   }, []);
@@ -122,24 +130,19 @@ export default function HomePage() {
   return (
     <main
       className={`${montserrat.variable} ${playfair.variable} font-sans 
-    min-h-screen
-    bg-bg-light text-text-light
-    dark:bg-bg-dark dark:text-text-dark`}
+        min-h-screen
+        bg-bg-light text-text-light
+        dark:bg-bg-dark dark:text-text-dark`}
     >
       <Navbar />
 
       {/* =========================
-          HERO – parallax images, floating crumbs
+          HERO
       ========================== */}
-      <section
-        className="relative bg-transparent"
-        aria-labelledby="hero-heading"
-      >
+      <section className="relative bg-transparent" aria-labelledby="hero-heading">
         <div className="max-w-6xl mx-auto px-4 py-14 lg:py-20 grid gap-10 lg:grid-cols-[1.1fr,minmax(0,1fr)] items-center">
-          {/* Floating crumbs / particles */}
           <BakeryParticles />
 
-          {/* Kiri – copy utama */}
           <motion.div
             variants={staggerContainer}
             initial="hidden"
@@ -173,12 +176,9 @@ export default function HomePage() {
               dengan bahan pilihan dan standar higienis yang ketat.
             </motion.p>
 
-            <motion.div
-              variants={fadeUp}
-              className="mt-6 flex flex-wrap items-center gap-3"
-            >
+            <motion.div variants={fadeUp} className="mt-6 flex flex-wrap items-center gap-3">
               <a
-                href="#order"
+                href="https://wa.me/62882008526405?text=${encodeURIComponent(cat.waMessage)}"
                 className="group inline-flex items-center justify-center rounded-full bg-gradient-to-r from-[#C48A4A] to-[#F4C58A] px-6 py-2.5 text-sm font-semibold text-white shadow-lg shadow-[#C48A4A]/30 hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
               >
                 <span className="mr-1">Order Sekarang</span>
@@ -186,7 +186,7 @@ export default function HomePage() {
               </a>
 
               <a
-                href="#products"
+                href="produk"
                 className="group inline-flex items-center justify-center rounded-full border border-[#CFA77A]/60 bg-white/60 px-5 py-2.5 text-xs md:text-sm font-semibold text-[#6A4A35] shadow-sm hover:bg-white/80 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 dark:bg-neutral-900/70 dark:border-neutral-700 dark:text-neutral-100 dark:hover:bg-neutral-800"
               >
                 Lihat Menu
@@ -203,7 +203,6 @@ export default function HomePage() {
             </motion.div>
           </motion.div>
 
-          {/* Kanan – parallax gallery */}
           <div className="relative h-[260px] sm:h-[320px] md:h-[380px] lg:h-[420px]">
             <HeroParallax />
           </div>
@@ -211,20 +210,18 @@ export default function HomePage() {
       </section>
 
       {/* =========================
-          ABOUT – animated icons
+          ABOUT
       ========================== */}
       <SectionWrapper id="about">
         <div className="max-w-6xl mx-auto px-4 py-14 lg:py-16">
           <motion.div variants={fadeUp} className="max-w-2xl mb-8">
             <SectionLabel>About Fiacahya Snack</SectionLabel>
-            <SectionTitle>
-              Sentuhan rumahan, kualitas hotel bintang lima.
-            </SectionTitle>
+            <SectionTitle>Sentuhan rumahan, kualitas hotel bintang lima.</SectionTitle>
             <SectionText>
-              Berawal dari dapur rumahan, Fiacahya Snack berkembang menjadi
-              partner andalan untuk kebutuhan snack dan bakery premium. Setiap
-              batch diproduksi dengan resep teruji, kontrol kualitas harian, dan
-              dokumentasi produksi yang rapi.
+              Berawal dari dapur rumahan, Fiacahya Snack berkembang menjadi partner
+              andalan untuk kebutuhan snack dan bakery premium. Setiap produksi
+              dibuat dengan resep teruji, proses rapi, dan konsistensi rasa yang
+              dijaga dari awal sampai akhir.
             </SectionText>
           </motion.div>
 
@@ -238,40 +235,34 @@ export default function HomePage() {
             <AboutItem
               icon={<Flame className="h-5 w-5 text-white" />}
               title="Freshly Baked"
-              text="Semua kue dan snack diproduksi harian dengan jadwal baking terukur, bukan stok lama."
+              text="Semua kue dan snack diproduksi harian dengan jadwal baking terukur."
             />
             <AboutItem
               icon={<ShieldCheck className="h-5 w-5 text-white" />}
-              title="Higienis & Terukur"
-              text="Proses produksi mengikuti SOP higienitas, pencatatan batch, dan quality control."
+              title="Higienis"
+              text="Proses produksi mengikuti SOP kebersihan agar aman dan nyaman untuk semua."
             />
             <AboutItem
               icon={<Gift className="h-5 w-5 text-white" />}
               title="Packaging Premium"
-              text="Box elegan, label rapi, siap untuk acara formal, corporate, dan hampers eksklusif."
+              text="Box elegan, label rapi, siap untuk acara formal, corporate, dan hampers."
             />
           </motion.div>
         </div>
       </SectionWrapper>
 
       {/* =========================
-          PRODUCT GRID – animated cards
+          PRODUCT GRID
       ========================== */}
       <SectionWrapper id="products">
         <div className="max-w-6xl mx-auto px-4 py-14 lg:py-16">
-          <motion.div
-            variants={fadeUp}
-            className="flex justify-between items-end gap-4 mb-8"
-          >
+          <motion.div variants={fadeUp} className="flex justify-between items-end gap-4 mb-8">
             <div className="max-w-xl">
               <SectionLabel>Our Signature Collection</SectionLabel>
-              <SectionTitle>
-                Rangkaian kue & snack favorit pelanggan.
-              </SectionTitle>
+              <SectionTitle>Rangkaian kue & snack favorit pelanggan.</SectionTitle>
               <SectionText>
-                Pilih varian yang paling cocok untuk coffee shop, meeting
-                kantor, hingga acara spesial Anda. Semua bisa dikustom untuk
-                kebutuhan paket.
+                Pilih varian yang paling cocok untuk coffee shop, meeting kantor,
+                hingga acara spesial Anda. Semua bisa dikustom untuk kebutuhan paket.
               </SectionText>
             </div>
           </motion.div>
@@ -299,7 +290,7 @@ export default function HomePage() {
             />
             <ProductCard
               title="Traditional Tampah Snack"
-              desc="Kue basah nusantara dengan tampilan modern & bersih."
+              desc="Kue basah nusantara dengan tampilan rapi untuk event."
               price="Mulai 120K/Tampah"
               tag="Event & Wedding"
               img="https://i.pinimg.com/736x/33/9a/2d/339a2d604691405fe24c8af2792b5ca4.jpg"
@@ -309,15 +300,13 @@ export default function HomePage() {
       </SectionWrapper>
 
       {/* =========================
-          WHY CHOOSE US – zoom-in icons
+          WHY US
       ========================== */}
       <SectionWrapper id="why-us">
         <div className="max-w-6xl mx-auto px-4 py-14 lg:py-16">
           <motion.div variants={fadeUp} className="max-w-2xl mb-8">
             <SectionLabel>Why Choose Fiacahya Snack</SectionLabel>
-            <SectionTitle>
-              Lebih dari sekadar snack, tapi pengalaman.
-            </SectionTitle>
+            <SectionTitle>Lebih dari sekadar snack, tapi pengalaman.</SectionTitle>
           </motion.div>
 
           <motion.div
@@ -335,24 +324,24 @@ export default function HomePage() {
             <FeatureCard
               icon={<FileText className="h-5 w-5" />}
               title="Transparan"
-              text="Detail ingredients dan informasi alergi yang rapi dan terbuka."
+              text="Informasi bahan & catatan request khusus disampaikan dengan jelas."
             />
             <FeatureCard
               icon={<Clock3 className="h-5 w-5" />}
               title="On-Time"
-              text="Tim delivery terlatih memastikan pesanan sampai tepat waktu."
+              text="Pengiriman tepat waktu agar acara berjalan lancar."
             />
             <FeatureCard
               icon={<Star className="h-5 w-5" />}
               title="Premium Taste"
-              text="Rasa konsisten, tekstur seimbang, dan tampilan Instagramable."
+              text="Rasa konsisten, tekstur seimbang, dan tampilan rapi."
             />
           </motion.div>
         </div>
       </SectionWrapper>
 
       {/* =========================
-          TESTIMONIALS – auto carousel
+          TESTIMONIALS (FIXED)
       ========================== */}
       <SectionWrapper id="testimonials">
         <div className="max-w-6xl mx-auto px-4 py-14 lg:py-16">
@@ -383,8 +372,8 @@ export default function HomePage() {
               <div className="flex-1 flex justify-end">
                 <div className="relative h-32 w-32 md:h-40 md:w-40 rounded-3xl border border-[#F7D3A5]/40 bg-white/10 backdrop-blur shadow-xl overflow-hidden dark:border-neutral-600">
                   <Image
-                    src="https://images.unsplash.com/photo-1551024601-bec78bea9cbc?auto=format&fit=crop&w=900&q=80"
-                    alt="Snack Fiacahya"
+                    src={testimonials[currentTestimonial].image}
+                    alt={testimonials[currentTestimonial].name}
                     fill
                     className="object-cover"
                     sizes="160px"
@@ -398,10 +387,11 @@ export default function HomePage() {
                 <button
                   key={idx}
                   onClick={() => setCurrentTestimonial(idx)}
-                  className={`h-1.5 rounded-full transition-all ${currentTestimonial === idx
+                  className={`h-1.5 rounded-full transition-all ${
+                    currentTestimonial === idx
                       ? "w-6 bg-[#F7D3A5]"
                       : "w-2 bg-[#F7D3A5]/40 hover:bg-[#F7D3A5]/70"
-                    }`}
+                  }`}
                   aria-label={`Lihat testimonial ${idx + 1}`}
                 />
               ))}
@@ -421,11 +411,11 @@ export default function HomePage() {
                 Fiacahya Assistant (Ops Internal)
               </p>
               <p className="text-xs md:text-sm text-[#6A4A35] dark:text-neutral-200">
-                Untuk tim internal, gunakan asisten AI untuk cek batch, jadwal
-                baking, dan QC log.
+                Untuk tim internal, gunakan asisten AI untuk cek batch, jadwal baking, dan log produksi.
               </p>
             </div>
             <button
+              aria-label="Buka Asisten Produksi AI"
               onClick={focusChatbot}
               className="inline-flex items-center justify-center rounded-full bg-[#3E2A20] text-white text-xs font-semibold px-4 py-2 shadow-md hover:-translate-y-0.5 active:translate-y-0 transition-transform dark:bg-neutral-100 dark:text-neutral-900"
             >
@@ -435,7 +425,6 @@ export default function HomePage() {
         </div>
       </SectionWrapper>
 
-      {/* FOOTER BARU */}
       <Footer />
     </main>
   );
@@ -667,68 +656,19 @@ function FeatureCard({
   );
 }
 
-function OrderStep({
-  step,
-  title,
-  text,
-}: {
-  step: string;
-  title: string;
-  text: string;
-}) {
-  return (
-    <motion.li
-      variants={fadeUp}
-      className="relative pl-6"
-    >
-      {/* dot nomor di garis */}
-      <div className="absolute -left-3 top-4 h-5 w-5 rounded-full bg-gradient-to-tr from-[#C48A4A] to-[#F4C58A] flex items-center justify-center text-[10px] font-semibold text-white shadow-md">
-        {step}
-      </div>
-
-      {/* card konten step */}
-      <div
-        className="
-          rounded-2xl bg-white/95
-          border border-[#E1C09A]/70
-          px-4 py-3
-          shadow-[0_14px_45px_rgba(15,23,42,0.06)]
-          hover:shadow-[0_20px_70px_rgba(15,23,42,0.12)]
-          hover:border-[#C48A4A]
-          transition-all duration-200
-          dark:bg-[#050505]
-          dark:border-neutral-800
-          dark:hover:border-amber-300/80
-          dark:shadow-[0_20px_60px_rgba(0,0,0,0.85)]
-        "
-      >
-        <h3 className="text-sm font-semibold text-[#2D2117] mb-1 dark:text-neutral-50">
-          {title}
-        </h3>
-        <p className="text-xs text-[#6A4A35] leading-relaxed dark:text-neutral-300">
-          {text}
-        </p>
-      </div>
-    </motion.li>
-  );
-}
-
 function BakeryParticles() {
   return (
     <div className="pointer-events-none absolute inset-0 -z-10">
-      {/* kiri atas */}
       <motion.span
         className="absolute -top-2 left-6 h-4 w-4 rounded-full bg-[#F9D8AC]/70 blur-[1px]"
         animate={{ y: [0, 6, 0] }}
         transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
       />
-      {/* kanan */}
       <motion.span
         className="absolute top-10 right-10 h-3 w-3 rounded-full bg-[#F1C08E]/70"
         animate={{ y: [0, -5, 0], x: [0, 4, 0] }}
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
       />
-      {/* bawah */}
       <motion.span
         className="absolute bottom-6 left-10 h-5 w-5 rounded-full bg-[#FFE1B8]/60 blur-[1px]"
         animate={{ y: [0, -8, 0] }}
@@ -744,14 +684,13 @@ function HeroParallax() {
   useEffect(() => {
     const id = setInterval(
       () => setIndex((prev) => (prev + 1) % HERO_IMAGES.length),
-      7000
+      7000,
     );
     return () => clearInterval(id);
   }, []);
 
   return (
     <div className="relative h-full w-full">
-      {/* FRAME BESAR */}
       <motion.div
         className="absolute inset-0 rounded-[2rem] bg-white/70 backdrop-blur shadow-[0_18px_60px_rgba(0,0,0,0.08)] overflow-hidden border border-[#E1C09A]/70 dark:bg-neutral-900/80 dark:border-neutral-700"
         initial={{ opacity: 0, y: 24 }}
@@ -765,10 +704,7 @@ function HeroParallax() {
             transition={{ duration: 0.8, ease: [0.22, 0.61, 0.36, 1] }}
           >
             {HERO_IMAGES.map((img, i) => (
-              <div
-                key={img.src}
-                className="relative h-full w-full flex-shrink-0"
-              >
+              <div key={img.src} className="relative h-full w-full flex-shrink-0">
                 <Image
                   src={img.src}
                   alt={img.alt || "Fiacahya Snack hero"}
@@ -783,7 +719,6 @@ function HeroParallax() {
         </div>
       </motion.div>
 
-      {/* KIRI BAWAH */}
       <motion.div
         className="hidden sm:block absolute -bottom-6 left-2 w-40 h-32 rounded-3xl overflow-hidden border border-[#E1C09A]/70 bg-white/90 shadow-[0_14px_45px_rgba(0,0,0,0.08)] dark:bg-neutral-900/90 dark:border-neutral-700"
         initial={{ y: 40, opacity: 0 }}
@@ -793,14 +728,13 @@ function HeroParallax() {
       >
         <Image
           src="https://res.cloudinary.com/dxdb3dj8f/image/upload/v1765125272/20230101_122120_gl3vcl.jpg"
-          alt="Cake tart oreo"
+          alt="Cake tart"
           fill
           sizes="160px"
           className="object-cover"
         />
       </motion.div>
 
-      {/* KANAN ATAS */}
       <motion.div
         className="hidden sm:block absolute -top-6 right-0 w-32 h-32 rounded-3xl overflow-hidden border border-[#E1C09A]/70 bg-white/90 shadow-[0_14px_45px_rgba(0,0,0,0.08)] dark:bg-neutral-900/90 dark:border-neutral-700"
         initial={{ y: -40, opacity: 0 }}
@@ -810,7 +744,7 @@ function HeroParallax() {
       >
         <Image
           src="https://res.cloudinary.com/dxdb3dj8f/image/upload/v1765125278/20240528_123847_gcangb.jpg"
-          alt="Muffin"
+          alt="Snack"
           fill
           sizes="160px"
           className="object-cover"

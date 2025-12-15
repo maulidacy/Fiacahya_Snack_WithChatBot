@@ -69,9 +69,9 @@ export default function GaleriPage() {
               Galeri produksi & produk Fiacahya Snack.
             </h1>
             <p className="text-sm md:text-base text-[#6A4A35] dark:text-neutral-200 leading-relaxed">
-              Kumpulan dokumentasi visual kue basah, pastry, proses produksi, dan
-              suasana dapur. Grid ini dirancang ringan dan responsif, sehingga
-              beberapa foto langsung terlihat di satu layar tanpa scrolling panjang.
+               Dokumentasi visual mulai dari persiapan bahan, proses produksi harian, hingga
+               tampilan akhir kue basah, kue kering, dan cake yang kami sajikan untuk berbagai
+               kebutuhan acara.
             </p>
           </div>
         </div>
@@ -113,7 +113,7 @@ export default function GaleriPage() {
                   "
                   loading="lazy"
                 />
-                {/* caption kecil, hanya muncul saat fokus / screen reader */}
+                {/* caption kecil, hanya muncul saat fokus/screen reader */}
                 <figcaption className="sr-only">{img.alt}</figcaption>
               </figure>
             ))}

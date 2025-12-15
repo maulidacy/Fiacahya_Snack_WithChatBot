@@ -109,7 +109,7 @@ export function Footer() {
                 <Mail className="mt-0.5 h-4 w-4 text-[#F7D3A5]" />
                 <div>
                   <p className="font-semibold text-[#FFE6C7]">Email</p>
-                  <p className="text-[#F9D8AC]">hello@fiacahya-snack.com</p>
+                  <p className="text-[#F9D8AC]">fiacahyasnackk@gmail.com</p>
                 </div>
               </li>
 

@@ -95,12 +95,12 @@ export default function ProduksiPage() {
           >
             <HighlightCard
               label="Kapasitas rata-rata"
-              value="500–800 pcs/hari"
+              value="500-1000 pcs/hari"
               desc="Tergantung kombinasi produk basah & kering."
             />
             <HighlightCard
               label="Jadwal produksi"
-              value="16.00 – 05.00"
+              value="16.00 - 05.00"
               desc="Shift baking sore & malam, cooling di pagi hari."
             />
             <HighlightCard
@@ -234,7 +234,7 @@ export default function ProduksiPage() {
 
               <div className="flex flex-col gap-2 text-xs text-[#6A4A35] dark:text-neutral-200">
                 <p>Pengiriman utama area: Gubug</p>
-                <p>Jarak ideal konsumsi: 4–6 jam setelah produk diterima</p>
+                <p>Jarak ideal konsumsi: 4-6 jam setelah produk diterima</p>
                 <p>Untuk kerja sama rutin, jadwal bisa di-lock per minggu</p>
                 <a
                   href="https://wa.me/62882008526405"

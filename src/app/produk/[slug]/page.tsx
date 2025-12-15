@@ -183,71 +183,99 @@ const PRODUCT_DETAIL: Record<
       "Kue kering untuk hampers lebaran, parcel perusahaan, dan penjualan grosir. Harga menyesuaikan ukuran toples dan jumlah varian.",
     products: [
       {
-        name: "Kastengel",
-        price: "Mulai Rp70.000 / toples",
-        note: "Keju melimpah, cocok untuk paket premium.",
-        image:
-          "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=900&q=80",
+        name: "Nastar Nanas",
+        price: "Rp45.000/500gr toples",
+        note: "Isian selai nanas homemade, lembut dan manis seimbang.",
       },
       {
-        name: "Nastar Premium",
-        price: "Mulai Rp75.000 / toples",
-        note: "Isian nanas homemade, rasa manis seimbang.",
-        image:
-          "https://images.unsplash.com/photo-1606811971618-4486d14f3f95?auto=format&fit=crop&w=900&q=80",
+        name: "Keciput",
+        price: "Rp35.000/250gr",
+        note: "Kue wijen renyah dengan rasa manis gurih khas tradisional.",
+      },
+      {
+        name: "Unthuk Yuyu",
+        price: "Rp35.000/250gr",
+        note: "Kue tradisional kecil dengan tekstur renyah rasa manis gurih, terbuat dari tepung ketan.",
       },
       {
         name: "Putri Salju",
-        price: "Mulai Rp65.000 / toples",
-        note: "Lembut dengan taburan gula halus.",
-        image:
-          "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=900&q=80",
+        price: "Rp40.000/500gr toples",
+        note: "Kue lembut lumer dengan taburan gula halus premium.",
       },
       {
-        name: "Sagu Keju",
-        price: "Mulai Rp70.000 / toples",
-        note: "Renya, lumer di mulut, aroma keju kuat.",
-        image:
-          "https://images.unsplash.com/photo-1587668178277-295251f900ce?auto=format&fit=crop&w=900&q=80",
+        name: "Kastengel",
+        price: "Rp45.000/500gr toples",
+        note: "Keju melimpah, rasa gurih pekat, cocok untuk hampers premium.",
+      },
+      {
+        name: "Lidah Kucing",
+        price: "Rp45.000/500gr toples",
+        note: "Kue tipis renyah dengan rasa mentega yang kaya.",
+      },
+      {
+        name: "Egg Roll",
+        price: "Rp60.000/500gr toples",
+        note: "Kue gulung tipis dengan tekstur renyah dan rasa manis gurih.",
       },
     ],
   },
 
   "kue-tart-cake": {
-    title: "Kue Tart & Whole Cake",
+    title: "Tart Fresh Cream, Roti Isi & Aneka Bolu Panggang",
     intro:
-      "Whole cake dan tart dekoratif untuk ulang tahun, syukuran, atau display coffee shop. Ukuran dan dekor bisa disesuaikan kebutuhan acara.",
-    products: [
-      {
-        name: "Tart Fresh Cream Ø 16 cm",
-        price: "Mulai Rp180.000",
-        note: "Dekor minimalis dengan fresh cream dan topping buah/oreo.",
-        image:
-          "https://res.cloudinary.com/dxdb3dj8f/image/upload/v1765125272/20230101_122120_gl3vcl.jpg",
-      },
-      {
-        name: "Tart Fresh Cream Ø 20 cm",
-        price: "Mulai Rp230.000",
-        note: "Cocok untuk 15–20 orang, bisa custom tulisan.",
-        image:
-          "https://res.cloudinary.com/dxdb3dj8f/image/upload/v1765124678/20240730_122558_ljvi7j.jpg",
-      },
-      {
-        name: "Butter Cake Loyang Kecil",
-        price: "Mulai Rp85.000 / loyang",
-        note: "Tekstur padat lembut, cocok untuk potong-potong.",
-        image:
-          "https://res.cloudinary.com/dxdb3dj8f/image/upload/v1765126411/20240801_144346_tcxzku.jpg",
-      },
-      {
-        name: "Brownies Panggang",
-        price: "Mulai Rp90.000 / loyang",
-        note: "Bisa dipotong menjadi beberapa slice untuk coffee shop.",
-        image:
-          "https://res.cloudinary.com/dxdb3dj8f/image/upload/v1765126417/20250529_110548_ouamvw.jpg",
-      },
-    ],
-  },
+    "Rangkaian tart fresh cream dan bolu panggang premium yang dibuat fresh setiap hari. Ideal untuk ulang tahun, syukuran keluarga, acara kantor, hingga display coffee shop. Tersedia pilihan ukuran, dekor minimalis, dan custom tulisan.",
+  products: [
+    {
+      name: "Tart Oreo Fresh Cream Ø 16cm",
+      price: "Mulai Rp70.000",
+      note: "Dekor minimalis dengan fresh cream dan topping oreo.",
+      image:
+        "https://res.cloudinary.com/dxdb3dj8f/image/upload/v1765125272/20230101_122120_gl3vcl.jpg",
+    },
+    {
+      name: "Cake Potong Aneka Topping Ø 22cm",
+      price: "Mulai Rp60.000",
+      note: "Cocok untuk 16 orang, bisa custom topping.",
+      image:
+        "https://res.cloudinary.com/dxdb3dj8f/image/upload/v1765125285/20230226_093848_w4fqmi.jpg",
+    },
+    {
+      name: "Bolu Panggang Pisang Ø 20cm",
+      price: "Rp50.000/loyang",
+      note: "Bolu panggang pisang lembut dengan rasa manis.",
+      image:
+        "https://res.cloudinary.com/dxdb3dj8f/image/upload/v1765124678/20240730_122558_ljvi7j.jpg",
+    },
+    {
+      name: "Brownies Kukus",
+      price: "Mulai Rp35.000/loyang",
+      note: "Brownies kukus lembut dengan rasa cokelat pekat. Tersedia ukuran berbagai ukuran.",
+      image:
+        "https://res.cloudinary.com/dxdb3dj8f/image/upload/v1765796243/20200319_122312-1-1_kl6kot.jpg",
+    },
+    {
+      name: "Bolu Panggang Vanila/Pandan Ø 20cm",
+      price: "Rp40.000/loyang",
+      note: "Bolu panggang vanila lembut dengan rasa manis.",
+      image:
+        "https://res.cloudinary.com/dxdb3dj8f/image/upload/v1765796397/20240601_120359_GTZkQBpo1q_dcx09m.jpg",
+    },
+    {
+      name: "Roti Isi Selai Ø 9cm",
+      price: "Rp7.000/pcs",
+      note: "Roti isi selai lembut dengan rasa manis.",
+      image:
+        "https://res.cloudinary.com/dxdb3dj8f/image/upload/v1765796397/Screenshot_2025-08-06_152752_2_mdco6x.jpg",
+    },
+    {
+      name: "Roti Isi Ø 20cm",
+      price: "Rp25.000/loyang",
+      note: "Roti isi lembut dengan rasa manis.",
+      image:
+        "https://res.cloudinary.com/dxdb3dj8f/image/upload/v1765126411/20240801_144346_tcxzku.jpg",
+    },
+  ],
+},
 
   "snack-box-paket": {
     title: "Snack Box & Paket Acara",
@@ -256,13 +284,13 @@ const PRODUCT_DETAIL: Record<
     products: [
       {
         name: "Snack Box Isi 3 Item",
-        price: "Mulai Rp10.000 / box",
+        price: "Mulai Rp6.000/box",
         note: "Umumnya 2 kue basah + 1 kudapan kering.",
         includes: ["Klepon pandan", "Lemper ayam", "Brownies mini"],
       },
       {
         name: "Snack Box Isi 4 Item",
-        price: "Mulai Rp13.000 / box",
+        price: "Mulai Rp8.000/box",
         note: "Kombinasi manis & asin, cocok untuk meeting kantor.",
         includes: [
           "Dadar gulung cokelat",
@@ -273,7 +301,7 @@ const PRODUCT_DETAIL: Record<
       },
       {
         name: "Snack Box Pagi (kue + roti + air mineral)",
-        price: "Mulai Rp15.000 / box",
+        price: "Mulai Rp10.000/box",
         note: "Cocok untuk acara pagi atau pelatihan.",
         includes: [
           "Roti manis isi cokelat",
@@ -283,10 +311,10 @@ const PRODUCT_DETAIL: Record<
         ],
       },
       {
-        name: "Paket Arisan / Pengajian",
-        price: "Mulai Rp20.000 / orang",
+        name: "Paket Arisan/Pengajian",
+        price: "Mulai Rp6.000/orang",
         note: "Isi bisa dikustom sesuai kebutuhan & tema acara.",
-        includes: ["2–3 kue basah", "1 snack kering / gorengan", "Minuman cup/gelas"],
+        includes: ["2–3 kue basah", "1 snack kering gorengan", "Minuman cup/gelas"],
       },
       {
         name: "Paket Kantor Rutin (mingguan/bulanan)",
@@ -294,7 +322,7 @@ const PRODUCT_DETAIL: Record<
         note: "Disusun khusus sesuai jadwal dan kebutuhan perusahaan.",
         includes: [
           "Menu rotasi mingguan",
-          "Opsi low sugar / tanpa pedas",
+          "Opsi low sugar/tanpa pedas",
           "Penjadwalan kirim rutin",
         ],
       },
@@ -312,7 +340,7 @@ function getCategoryData(slug: string) {
   return PRODUCT_DETAIL["snack-box-paket"];
 }
 
-// ⬇️ Next sekarang kirim params sebagai Promise
+// Next sekarang kirim params sebagai Promise
 export default async function ProdukDetailPage({
   params,
 }: {

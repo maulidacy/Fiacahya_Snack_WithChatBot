@@ -41,16 +41,16 @@ const categories = [
     slug: "kue-kering",
     title: "Kue Kering",
     desc: "Produksi musiman dan reguler untuk paket hampers, parcel, dan penjualan grosir.",
-    examples: ["Kastengel", "Nastar", "Putri salju", "Sagu keju"],
+    examples: ["Kastengel", "Nastar", "Putri salju", "Lidah kucing"],
     note: "Ideal untuk paket lebaran, hampers perusahaan, dan gift premium.",
     waMessage:
       "Halo Fiacahya Snack, saya ingin tanya detail paket dan ketersediaan untuk kategori *Kue Kering*.",
   },
   {
     slug: "kue-tart-cake",
-    title: "Kue Tart & Cake",
-    desc: "Cake dekoratif untuk ulang tahun, syukuran, dan kebutuhan display di coffee shop.",
-    examples: ["Tart fresh cream", "Butter cake", "Brownies panggang"],
+    title: "Cake Tart, Roti Isi & Bolu Panggang Premium",
+    desc: "Kue tart, roti isi, dan bolu panggang premium dengan tekstur lembut dan rasa autentik.",
+    examples: ["Tart fresh cream", "Butter cake", "Brownies kukus", "Roti isi"],
     note: "Bisa custom ukuran, dekor minimalis, dan message khusus.",
     waMessage:
       "Halo Fiacahya Snack, saya ingin tanya detail paket dan ketersediaan untuk kategori *Kue Tart & Cake*.",
